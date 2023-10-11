@@ -245,6 +245,32 @@ $social_links = $social_links1->fetch(PDO::FETCH_ASSOC); ?>
             <meta name="description" content="<?php echo $social_links['meta_description']; ?>" />
     <?php  }
     } ?>
+
+    <?php if ($page_name == 'blog.php') {
+
+        $header_images = $conn->query("SELECT * FROM header_images where id='10' ");
+        $header_images_row = $header_images->fetch(PDO::FETCH_ASSOC);
+
+        if ($header_images_row['meta_title'] != '') { ?>
+            <meta name="title" content="<?php echo $header_images_row['meta_title']; ?>" />
+        <?php } else {  ?>
+            <meta name="title" content="<?php echo $social_links['meta_title']; ?>" />
+        <?php }
+
+        if ($header_images_row['meta_keywords'] != '') {
+        ?>
+            <meta name="keywords" content="<?php echo $header_images_row['meta_keywords']; ?>" />
+        <?php } else {  ?>
+            <meta name="keywords" content="<?php echo $social_links['meta_keywords']; ?>" />
+        <?php }
+
+        if ($header_images_row['meta_description'] != '') {  ?>
+            <meta name="description" content="<?php echo $header_images_row['meta_description']; ?>" />
+        <?php } else {  ?>
+            <meta name="description" content="<?php echo $social_links['meta_description']; ?>" />
+    <?php  }
+    } ?>
+
     <!-- Stylesheets -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -317,23 +343,26 @@ $social_links = $social_links1->fetch(PDO::FETCH_ASSOC); ?>
                                     <li class="<?php if ($page_name == 'about.php') {
                                                     echo 'current';
                                                 } ?>"><a href="about"><span>About Us</span></a></li>
-                                    <li class="dropdown">
+                                    <li class="<?php if ($page_name == 'services.php') {
+                                                    echo 'current';
+                                                } ?>"><a href="services"><span>Services</span></a></li>
+                                    <!-- <li class="dropdown">
                                         <a href="services">Services</a>
                                         <ul>
                                             <?php $services1 = $conn->query("SELECT * FROM services");
                                             while ($services = $services1->fetch(PDO::FETCH_ASSOC)) { ?>
                                                 <li><a href="service-details/<?php echo $services['p_link']; ?>"><?php echo $services['title']; ?></a></li>
-                                                <!-- <li><a href="service-details.php">Restorative Dentistry</a></li> 
+                                                <li><a href="service-details.php">Restorative Dentistry</a></li> 
                                         <li><a href="service-details.php">Root Canal Treatments</a></li>
                                         <li><a href="service-details.php">Crowns and Bridges</a></li>
                                         <li><a href="service-details.php">Dental Implants</a></li>
                                         <li><a href="service-details.php">Surgical Dentistry</a></li>
                                         <li><a href="service-details.php">Missing Teeth Replacement</a></li>
                                         <li><a href="service-details.php">Kids Dentistry</a></li>
-                                        <li><a href="service-details.php">Cosmetic Dentistry</a></li> -->
+                                        <li><a href="service-details.php">Cosmetic Dentistry</a></li>
                                             <?php } ?>
                                         </ul>
-                                    </li>
+                                    </li> -->
                                     <li class="<?php if ($page_name == 'facilities.php') {
                                                     echo 'current';
                                                 } ?>"><a href="facilities"><span>Facilities</span></a></li>
@@ -352,6 +381,9 @@ $social_links = $social_links1->fetch(PDO::FETCH_ASSOC); ?>
                                                         } ?>"><a href="videos">Videos</a></li>
                                         </ul>
                                     </li>
+                                    <li class="<?php if ($page_name == 'blog.php') {
+                                                    echo 'current';
+                                                } ?>"><a href="blog"><span>Blog</span></a></li>
                                     <li class="<?php if ($page_name == 'contact.php') {
                                                     echo 'current';
                                                 } ?>"><a href="contact">Contact</a></li>

@@ -1,5 +1,5 @@
 <?php include 'include/header.php'; ?>
-<?php $header_images = $conn->query("SELECT * FROM header_images where id='2' ");
+<?php $header_images = $conn->query("SELECT * FROM header_images where id='10' ");
 $header_images_row = $header_images->fetch(PDO::FETCH_ASSOC); ?>
 <!--Page Title-->
 <section class="page-title" style="background-image: url(uploads/<?php echo $header_images_row['image']; ?>);">
