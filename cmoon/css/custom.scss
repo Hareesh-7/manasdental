@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+$theme:#34495e;
+$themeHeight:50px;
+// *{
+//     box-shadow:0px 0px 0px 1px #f90;
+// }
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    background: #e4e5e6;
+
+}
+.dropdown-menu {
+    font-size: inherit;
+    &.dropdown-menu-notifications{
+        width: 300px;
+    }
+}
+.card {
+    .card-header {
+        font-weight: bold;
+        font-size: 16px;
+        background: white;
+    }
+    &.card-tabble{
+   border: 0px;
+        .card-header{
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-bottom: 0px;
+        }
+        .card-footer{
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-top: 0px;
+        }
+        .table{
+            margin: 0px;
+
+            tr{
+                td,th{
+                   &:first-child{
+                     padding-left: 20px;
+                   }&:last-child{
+                     padding-right: 20px;
+                   }
+                }
+            }
+        }
+    }
+}
+.custom-select{
+        -webkit-appearance: none;
+}
+.wrapper {
+    padding: 20px 0px;
+    margin-top: $themeHeight;
+    margin-bottom: $themeHeight;
+    position: relative;
+    z-index: 5;
+
+
+}
+.login-interface{
+    height: 100vh;
+}
+header {
+    height: $themeHeight;
+    padding: 0px 0px;
+    background: $theme;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 99;
+    .logo {
+        img {
+            height: 15px;
+        }
+    }
+    .nav-menu {
+        margin-right: -15px;
+        .nav-item {
+            border-left: 1px solid rgba(white, .06);
+            .nav-link {
+                height: $themeHeight;
+                line-height: $themeHeight;
+                padding: 0px 15px;
+            }
+        }
+    }
+}
+.anchor {
+    display: block;
+    position: relative;
+    margin: 0px 0px 15px 0px;
+    .anchor__icon {
+        position: absolute;
+        left: 0px;
+        top: 50%;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: $theme;
+        color: white;
+        border-radius: 100%;
+        margin-top: -20px;
+    }
+    .anchor__info {
+        padding-left: 40px + 10;
+        line-height: 40px;
+        strong {
+            font-weight: normal;
+        }
+    }
+}
+
+.row{
+    [class^="col"]{
+        &:nth-child(6n + 1){
+            .anchor{
+                .anchor__icon{
+                    background: #e74c3c;
+                }
+            }
+        } &:nth-child(6n + 2){
+            .anchor{
+                .anchor__icon{
+                    background: #3498db;
+                }
+            }
+        }&:nth-child(6n + 3){
+            .anchor{
+                .anchor__icon{
+                    background: #9b59b6;
+                }
+            }
+        }&:nth-child(6n + 4){
+            .anchor{
+                .anchor__icon{
+                    background: #2ecc71;
+                }
+            }
+        }&:nth-child(6n + 5){
+            .anchor{
+                .anchor__icon{
+                    background: #f39c12;
+                }
+            }
+        }&:nth-child(6n + 6){
+            .anchor{
+                .anchor__icon{
+                    background: #1abc9c;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: $themeHeight;
+    line-height: $themeHeight;
+    padding: 0px 0px;
+    background: white;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    z-index: 99;
+}
+
+.pugins-iframe{
+     margin-top: $themeHeight;
+    margin-bottom: $themeHeight;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border: 0px;
+    width: 100%;
+    height: calc(100% - 100px);
+    background: transparent;
+    z-index: 9;
+    display: block;
+}

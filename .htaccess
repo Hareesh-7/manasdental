@@ -1,0 +1,8 @@
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^service-details/([^/]+)/?$ service-details.php?p_link=$1 [NC,QSA,L]
+
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
