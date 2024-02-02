@@ -4,6 +4,7 @@
         <div class="d-none d-md-block"><div class="row">
                     <div class="col">Admin Panel - Developed by Colour Moon</div>
                     <div class="col-auto">Developer : Supriya | 2020</div>
+                    <div class="col-auto">Maintainer : Hareesh | 2023</div>
                 </div></div>
   <div class="d-block d-md-none">      <div class="row">
               <div class="col-12 text-center">Admin Panel </div>
